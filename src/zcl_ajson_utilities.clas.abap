@@ -27,7 +27,7 @@ class zcl_ajson_utilities definition
   protected section.
 
   private section.
-
+    data mo_json_parser type i.
     data mo_json_a type ref to zcl_ajson .
     data mo_json_b type ref to zcl_ajson .
     data mo_insert type ref to zif_ajson_writer .
@@ -72,6 +72,7 @@ CLASS zcl_ajson_utilities IMPLEMENTATION.
 
       loop at io_json->mt_json_tree into ls_json_tree
         where type = 'object' and children = 0.
+
 
         io_json->delete( ls_json_tree-path && ls_json_tree-name ).
 
